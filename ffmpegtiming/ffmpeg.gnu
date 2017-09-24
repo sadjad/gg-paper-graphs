@@ -153,7 +153,7 @@ set xtics norangelimit 500
 set y2tics norangelimit 5
 set xrange [ -0.50000 : 5125 ] noreverse nowriteback
 
-set arrow from first 0, second 15.1 to first 5110, second 16.03 lt 3 lc '#aaaaaa' lw 1 nohead
+set arrow from first 0, second 16.03 to first 5110, second 16.03 lt 3 lc '#aaaaaa' lw 1 nohead
 set label "🡣 preprocess, compile and assemble" at first 0, second 16.03 font "Arimo Bold, 22" front offset 0,-0.7 left textcolor '#999999'
 set label "archive, link and strip 🡡" at first 5100, second 16.03 font "Arimo Bold, 22" front offset 0,0.6 right textcolor '#999999'
 set label "job completed 🡢" at first 5110, second 30 font "Arimo Bold, 22" front offset 0,0 right textcolor '#999999'
@@ -172,21 +172,23 @@ plot "timing_data" using 2 t "" lc rgb "white", \
 
 set y2label "time (s)"
 set y2label font "Arial, 28" textcolor lt -1 rotate by -270 offset -1, 0
-set xrange [5040 : 5117 ] noreverse nowriteback
-set xtics (5000,5050,5115)
+set xrange [5075 : 5117 ] noreverse nowriteback
+set xtics (5000,5080,5095,5115)
 
 unset label
 unset arrow
 unset key
 
-set arrow from first 5045, second 16.03 to first 5113, second 16.03 lt 3 lc '#aaaaaa' lw 1 nohead
-set label "job completed 🡢" at first 5113, second 30 font "Arimo Bold, 22" front offset 0,0 right textcolor '#999999'
-set label "archive, link and strip 🡡" at first 5110, second 16.03 font "Arimo Bold, 22" front offset 0,0.6 right textcolor '#999999'
+set arrow from first 5075, second 16.03 to first 5113, second 16.03 lt 3 lc '#aaaaaa' lw 1 nohead
+set label "job completed 🡢" at first 5114, second 30 font "Arimo Bold, 22" front offset 0,0 right textcolor '#999999'
+set label "archive, link and strip 🡡" at first 5110.5, second 16.03 font "Arimo Bold, 22" front offset 0,0.6 right textcolor '#999999'
 
 set size 0.33, 1.0
 set origin 0.66, 0
 set lmargin -5
 x = 0.0
+
+set boxwidth 0.85 relative
 ## Last datafile plotted: "timing_data"
 plot "timing_data" using 2 t "" lc rgb "white", \
                 "" using 3 t "" lc rgb "#377eb8", \
