@@ -1,5 +1,6 @@
 set terminal svg enhanced size 1500, 500 background rgb 'white' font 'Arial,18'
 set output 'graph.svg'
+
 unset clip points
 set clip one
 unset clip two
@@ -10,8 +11,8 @@ set ydata
 set xdata
 set y2data
 set x2data
-set boxwidth 1.0 relative
-set style fill solid 1.00 border lt -2
+set boxwidth 1
+set style fill solid 1.00 noborder
 set style rectangle back fc  bgnd fillstyle   solid 1.00 border lt -1
 set style circle radius graph 0.02, first 0.00000, 0.00000
 set style ellipse size graph 0.05, 0.03, first 0.00000 angle 0 units xy
@@ -29,9 +30,9 @@ set tics back
 unset grid
 set raxis
 set style parallel front  lt black linewidth 2.000 dashtype solid
-set key invert left top inside Left reverse font "Arial, 20" samplen 1.5 spacing 1
-unset label
-unset arrow
+set key left top inside Left reverse font "Arial, 20" samplen 1.5 spacing 1
+#unset label
+#unset arrow
 set style increment default
 unset style line
 unset style arrow
@@ -133,7 +134,7 @@ set paxis 7 range [ * : * ] noreverse nowriteback
 set zero 1e-08
 set lmargin  -1
 set bmargin  -1
-set rmargin  -1
+set rmargin  6.5
 set tmargin  -1
 set locale "en_US.UTF-8"
 set pm3d explicit at s
