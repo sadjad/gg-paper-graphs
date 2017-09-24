@@ -183,8 +183,6 @@ set arrow from first 5045, second 16.03 to first 5113, second 16.03 lt 3 lc '#aa
 set label "job completed 🡢" at first 5113, second 30 font "Arimo Bold, 22" front offset 0,0 right textcolor '#999999'
 set label "archive, link and strip 🡡" at first 5110, second 16.03 font "Arimo Bold, 22" front offset 0,0.6 right textcolor '#999999'
 
-
-
 set size 0.33, 1.0
 set origin 0.66, 0
 set lmargin -5

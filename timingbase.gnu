@@ -11,7 +11,7 @@ set ydata
 set xdata
 set y2data
 set x2data
-set boxwidth 1
+set boxwidth 0.9
 set style fill solid 1.00 noborder
 set style rectangle back fc  bgnd fillstyle   solid 1.00 border lt -1
 set style circle radius graph 0.02, first 0.00000, 0.00000
