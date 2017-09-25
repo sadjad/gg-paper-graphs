@@ -1,0 +1,77 @@
+digraph ExCamera {
+rankdir=LR;
+overlap = true;
+splines = true;
+ranksep = 0.3;
+
+edge [arrowhead=vee,arowsize=0.8,fontname="SF Mono"];
+node [shape=box,fontname="SF Mono",fontsize=16];
+
+{node [shape=underline,style="rounded,filled",fillcolor=gray85,color=black,margin="0.2,0.1"] "1.raw" "2.raw" "3.raw" "4.raw"}
+
+{node [style=filled,fillcolor=lightblue] " 1.vp8 " "2-0.vp8" "3-0.vp8" "4-0.vp8"}
+{node [style=filled,fillcolor=olivedrab3] "1-0.state" "2-0.state" "3-0.state" "2-1.state" "3-1.state"}
+{node [style=filled,fillcolor=deepskyblue] " 2.vp8 ", "3-1.vp8" "4-1.vp8"}
+{node [style=filled,fillcolor=gold] "3.vp8" "4.vp8"}
+
+"(infiles)" [shape=none,fontsize=16,fontname="SF Mono"];
+"vpxenc" [shape=none,fontsize=16,fontname="SF Mono"];
+"xcdec"  [shape=none,fontsize=16,fontname="SF Mono"];
+"xcenc"  [shape=none,fontsize=16,fontname="SF Mono"];
+"xcdec2" [label="xcdec",shape=none,fontsize=16,fontname="SF Mono"];
+"xcdec3" [label="xcdec",shape=none,fontsize=16,fontname="SF Mono"];
+"rebase" [shape=none,fontsize=16,fontname="SF Mono"];
+"rebase2" [label="rebase",shape=none,fontsize=16,fontname="SF Mono"];
+
+"(infiles)" -> vpxenc [weight=5,style=invis]
+xcdec -> xcenc [weight=5,style=invis];
+xcenc -> xcdec2 [weight=5,style=invis];
+xcdec2 -> rebase [weight=5,style=invis];
+rebase -> xcdec3 [weight=5,style=invis];
+xcdec3 -> rebase2 [weight=5,style=invis];
+
+{rank = source; "1.raw" "2.raw" "3.raw" "4.raw" "(infiles)"}
+{rank = same; "2-0.vp8" "3-0.vp8" "4-0.vp8", "vpxenc"}
+{rank = same; "2-0.state" "3-0.state" "1-0.state", "xcdec"}
+{rank = same; " 2.vp8 " "3-1.vp8" "4-1.vp8" "xcenc"}
+//{rank = same; "2-1.state" "3.vp8"}
+//{rank = same; "3-1.state" "4.vp8"}
+
+"3.vp8" [penwidth=2,style="filled,rounded",shape=box,margin="0.3,0.1"]
+"4.vp8" [penwidth=2,style="filled,rounded",shape=box,margin="0.3,0.1"]
+" 2.vp8 " [penwidth=2,style="filled,rounded",shape=box]
+" 1.vp8 " [penwidth=2,style="filled,rounded",shape=box]
+
+
+"1.raw" -> " 1.vp8 ";
+"2.raw" -> "2-0.vp8";
+"3.raw" -> "3-0.vp8";
+"4.raw" -> "4-0.vp8";
+
+" 1.vp8 " -> "1-0.state" [weight=7];
+"2-0.vp8" -> "2-0.state";
+"3-0.vp8" -> "3-0.state";
+//"4-0.vp8" -> "4-0.state";
+
+"2-0.vp8" -> " 2.vp8 " [weight=8];
+"1-0.state" -> " 2.vp8 ";
+
+"3-0.vp8" -> "3-1.vp8" [weight=9];
+"2-0.state" -> "3-1.vp8";
+
+"4-0.vp8" -> "4-1.vp8" [weight=10];
+"3-0.state" -> "4-1.vp8";
+
+" 2.vp8 " -> "2-1.state" [weight=7];
+"1-0.state" -> "2-1.state";
+
+"3-1.vp8" -> "3.vp8" [weight=9];
+"2-1.state" -> "3.vp8";
+
+"3.vp8" -> "3-1.state";
+"2-1.state" -> "3-1.state";
+
+"4-1.vp8" -> "4.vp8" [weight=10];
+"3-1.state" -> "4.vp8";
+
+}
