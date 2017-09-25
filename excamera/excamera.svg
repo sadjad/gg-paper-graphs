@@ -17,7 +17,7 @@
 </g>
 <!--  1.vp8  -->
 <g id="node5" class="node"><title> 1.vp8 </title>
-<path fill="lightblue" stroke="black" stroke-width="2" d="M199,-274C199,-274 138,-274 138,-274 132,-274 126,-268 126,-262 126,-262 126,-250 126,-250 126,-244 132,-238 138,-238 138,-238 199,-238 199,-238 205,-238 211,-244 211,-250 211,-250 211,-262 211,-262 211,-268 205,-274 199,-274"/>
+<path fill="lightskyblue" stroke="black" stroke-width="2" d="M199,-274C199,-274 138,-274 138,-274 132,-274 126,-268 126,-262 126,-262 126,-250 126,-250 126,-244 132,-238 138,-238 138,-238 199,-238 199,-238 205,-238 211,-244 211,-250 211,-250 211,-262 211,-262 211,-268 205,-274 199,-274"/>
 <text text-anchor="middle" x="168.5" y="-252.2" font-family="SF Mono" font-size="16.00"> 1.vp8 </text>
 </g>
 <!-- 1.raw&#45;&gt; 1.vp8  -->
@@ -33,7 +33,7 @@
 </g>
 <!-- 2&#45;0.vp8 -->
 <g id="node6" class="node"><title>2&#45;0.vp8</title>
-<polygon fill="lightblue" stroke="black" points="211,-220 126,-220 126,-184 211,-184 211,-220"/>
+<polygon fill="lightskyblue" stroke="black" points="211,-220 126,-220 126,-184 211,-184 211,-220"/>
 <text text-anchor="middle" x="168.5" y="-198.2" font-family="SF Mono" font-size="16.00">2&#45;0.vp8</text>
 </g>
 <!-- 2.raw&#45;&gt;2&#45;0.vp8 -->
@@ -49,7 +49,7 @@
 </g>
 <!-- 3&#45;0.vp8 -->
 <g id="node7" class="node"><title>3&#45;0.vp8</title>
-<polygon fill="lightblue" stroke="black" points="211,-128 126,-128 126,-92 211,-92 211,-128"/>
+<polygon fill="lightskyblue" stroke="black" points="211,-128 126,-128 126,-92 211,-92 211,-128"/>
 <text text-anchor="middle" x="168.5" y="-106.2" font-family="SF Mono" font-size="16.00">3&#45;0.vp8</text>
 </g>
 <!-- 3.raw&#45;&gt;3&#45;0.vp8 -->
@@ -65,7 +65,7 @@
 </g>
 <!-- 4&#45;0.vp8 -->
 <g id="node8" class="node"><title>4&#45;0.vp8</title>
-<polygon fill="lightblue" stroke="black" points="211,-36 126,-36 126,-0 211,-0 211,-36"/>
+<polygon fill="lightskyblue" stroke="black" points="211,-36 126,-36 126,-0 211,-0 211,-36"/>
 <text text-anchor="middle" x="168.5" y="-14.2" font-family="SF Mono" font-size="16.00">4&#45;0.vp8</text>
 </g>
 <!-- 4.raw&#45;&gt;4&#45;0.vp8 -->
@@ -95,7 +95,7 @@
 </g>
 <!--  2.vp8  -->
 <g id="node14" class="node"><title> 2.vp8 </title>
-<path fill="deepskyblue" stroke="black" stroke-width="2" d="M432,-220C432,-220 371,-220 371,-220 365,-220 359,-214 359,-208 359,-208 359,-196 359,-196 359,-190 365,-184 371,-184 371,-184 432,-184 432,-184 438,-184 444,-190 444,-196 444,-196 444,-208 444,-208 444,-214 438,-220 432,-220"/>
+<path fill="#ee6363" stroke="black" stroke-width="2" d="M432,-220C432,-220 371,-220 371,-220 365,-220 359,-214 359,-208 359,-208 359,-196 359,-196 359,-190 365,-184 371,-184 371,-184 432,-184 432,-184 438,-184 444,-190 444,-196 444,-196 444,-208 444,-208 444,-214 438,-220 432,-220"/>
 <text text-anchor="middle" x="401.5" y="-198.2" font-family="SF Mono" font-size="16.00"> 2.vp8 </text>
 </g>
 <!-- 2&#45;0.vp8&#45;&gt; 2.vp8  -->
@@ -115,7 +115,7 @@
 </g>
 <!-- 3&#45;1.vp8 -->
 <g id="node15" class="node"><title>3&#45;1.vp8</title>
-<polygon fill="deepskyblue" stroke="black" points="444,-128 359,-128 359,-92 444,-92 444,-128"/>
+<polygon fill="#ee6363" stroke="black" points="444,-128 359,-128 359,-92 444,-92 444,-128"/>
 <text text-anchor="middle" x="401.5" y="-106.2" font-family="SF Mono" font-size="16.00">3&#45;1.vp8</text>
 </g>
 <!-- 3&#45;0.vp8&#45;&gt;3&#45;1.vp8 -->
@@ -125,7 +125,7 @@
 </g>
 <!-- 4&#45;1.vp8 -->
 <g id="node16" class="node"><title>4&#45;1.vp8</title>
-<polygon fill="deepskyblue" stroke="black" points="444,-36 359,-36 359,-0 444,-0 444,-36"/>
+<polygon fill="#ee6363" stroke="black" points="444,-36 359,-36 359,-0 444,-0 444,-36"/>
 <text text-anchor="middle" x="401.5" y="-14.2" font-family="SF Mono" font-size="16.00">4&#45;1.vp8</text>
 </g>
 <!-- 4&#45;0.vp8&#45;&gt;4&#45;1.vp8 -->

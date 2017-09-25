@@ -9,9 +9,9 @@ node [shape=box,fontname="SF Mono",fontsize=16];
 
 {node [shape=underline,style="rounded,filled",fillcolor=gray85,color=black,margin="0.2,0.1"] "1.raw" "2.raw" "3.raw" "4.raw"}
 
-{node [style=filled,fillcolor=lightblue] " 1.vp8 " "2-0.vp8" "3-0.vp8" "4-0.vp8"}
+{node [style=filled,fillcolor=lightskyblue] " 1.vp8 " "2-0.vp8" "3-0.vp8" "4-0.vp8"}
 {node [style=filled,fillcolor=olivedrab3] "1-0.state" "2-0.state" "3-0.state" "2-1.state" "3-1.state"}
-{node [style=filled,fillcolor=deepskyblue] " 2.vp8 ", "3-1.vp8" "4-1.vp8"}
+{node [style=filled,fillcolor=indianred2] " 2.vp8 ", "3-1.vp8" "4-1.vp8"}
 {node [style=filled,fillcolor=gold] "3.vp8" "4.vp8"}
 
 "(infiles)" [shape=none,fontsize=16,fontname="SF Mono"];
