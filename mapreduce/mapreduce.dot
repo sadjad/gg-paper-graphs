@@ -1,0 +1,69 @@
+digraph ExCamera {
+rankdir=LR;
+overlap = false;
+splines = true;
+ranksep = 0.3;
+
+edge [arrowhead=vee,arowsize=0.3,fontname="SF Mono"];
+node [shape=box,fontname="SF Mono",fontsize=16];
+
+"(infiles)" [shape=none,fontsize=16,fontname="SF Mono"];
+"map" [shape=none,fontsize=16,fontname="SF Mono"];
+"partition" [shape=none,fontsize=16,fontname="SF Mono"];
+"reduce" [shape=none,fontsize=16,fontname="SF Mono"];
+"cat" [shape=none,fontsize=16,fontname="SF Mono"];
+
+"out" [fillcolor=gold,penwidth=2,style="filled,rounded",shape=box,margin="0.3,0.1"];
+
+"(infiles)" -> map [weight=7,style=invis]
+"(infiles)" -> "1.txt" [weight=100,style=invis]
+"1.txt" -> "2.txt" [weight=100,style=invis]
+"2.txt" -> "3.txt" [weight=100,style=invis]
+"3.txt" -> "⋮" [weight=100,style=invis]
+"⋮" -> "N.txt" [weight=100,style=invis]
+map -> partition [weight=7,style=invis]
+partition -> reduce [weight=7,style=invis]
+reduce -> cat [weight=7,style=invis]
+
+{rank = source; "(infiles)" "1.txt" "2.txt" "3.txt" "⋮" "N.txt"}
+{rank = same; "1.mapped" "2.mapped" "3.mapped" "N.mapped"}
+{rank = same; P1 P2 P3}
+{rank = same; R1 R2 R3}
+
+"1.txt" [shape=underline,style="rounded,filled",fillcolor=lightblue,color=black,margin="0.2,0.1"]
+"2.txt" [shape=underline,style="rounded,filled",fillcolor=lightblue,color=black,margin="0.2,0.1"]
+"3.txt" [shape=underline,style="rounded,filled",fillcolor=lightblue,color=black,margin="0.2,0.1"]
+"⋮"  [fontsize=23,shape=none,style="rounded",fillcolor=lightblue,color=black,margin="0.2,0.1"]
+"N.txt" [shape=underline,style="rounded,filled",fillcolor=lightblue,color=black,margin="0.2,0.1"]
+
+"3.txt" -> "⋮" [style=invis]
+
+"1.txt" -> "1.mapped" [weight=7]
+"2.txt" -> "2.mapped" [weight=7]
+"3.txt" -> "3.mapped" [weight=7]
+"N.txt" -> "N.mapped" [weight=7]
+
+
+"1.mapped" -> "P1"
+"2.mapped" -> "P1" [weight=7]
+"3.mapped" -> "P1" [arrowhead=none]
+"N.mapped" -> "P1"
+
+"1.mapped" -> "P2"
+"2.mapped" -> "P2" [arrowhead=none]
+"3.mapped" -> "P2" [weight=7]
+"N.mapped" -> "P2"
+
+"1.mapped" -> "P3"
+"2.mapped" -> "P3"
+"3.mapped" -> "P3" [arrowhead=none]
+"N.mapped" -> "P3"
+
+P1 -> "R1"
+P2 -> "R2"
+P3 -> "R3"
+
+R1 -> out
+R2 -> out
+R3 -> out
+}
