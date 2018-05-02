@@ -134,7 +134,7 @@ set paxis 7 range [ * : * ] noreverse nowriteback
 set zero 1e-08
 set lmargin  -1
 set bmargin  -1
-set rmargin  6.5
+set rmargin  7.5
 set tmargin  -1
 set locale "en_US.UTF-8"
 set pm3d explicit at s
@@ -152,10 +152,9 @@ set fit brief errorvariables nocovariancevariables errorscaling prescale nowrap 
 
 x = 0.0
 ## Last datafile plotted: "timing_data"
-plot "timing_data" using 2 t "" lc rgb "white", \
-                "" using 3 t "" lc rgb "#377eb8", \
-                "" using 4 t "" lc rgb "#377eb8", \
-                "" using 5 t "Fetching the dependencies" lc rgb "#377eb8", \
-                "" using 6 t "Executing the thunk" lc rgb "#4daf4a", \
-                "" using 7 t "" lc rgb "#e41a1c", \
-                "" using 8 t "Uploading the results" lc rgb "#e41a1c"
+plot "timing_data" using ($2/1000) t "" lc rgb "white", \
+                "" using ($3/1000) t "" lc rgb "#377eb8", \
+                "" using ($4/1000) t "" lc rgb "#377eb8", \
+                "" using ($5/1000) t "Fetching the dependencies" lc rgb "#377eb8", \
+                "" using ($6/1000) t "Executing the thunk" lc rgb "#4daf4a", \
+                "" using ($7/1000) t "Uploading the results" lc rgb "#e41a1c"
