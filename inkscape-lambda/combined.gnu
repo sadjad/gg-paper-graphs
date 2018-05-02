@@ -11,7 +11,7 @@ set ydata
 set xdata
 set y2data
 set x2data
-set boxwidth 0.9
+set boxwidth 1
 set style fill solid 1.00 noborder
 set style rectangle back fc  bgnd fillstyle   solid 1.00 border lt -1
 set style circle radius graph 0.02, first 0.00000, 0.00000
@@ -108,12 +108,11 @@ set trange [ * : * ] noreverse nowriteback
 set urange [ * : * ] noreverse nowriteback
 set vrange [ * : * ] noreverse nowriteback
 set xlabel "Worker #"
-set xlabel  font "Arial, 28" textcolor lt -1 norotate  offset 0, 0
+set xlabel  font "Arial, 28" textcolor lt -1 norotate  offset 0, -0.5
 set x2label ""
 set x2label  font "" textcolor lt -1 norotate
 set x2range [ * : * ] noreverse nowriteback
-set y2label "Time (s)"
-set y2label font "Arial, 28" textcolor lt -1 rotate by -270 offset -0.5, 0
+unset y2label
 set ylabel ""
 set ylabel  font "" textcolor lt -1 rotate by -270
 set yrange [ * : * ] noreverse nowriteback
@@ -134,7 +133,7 @@ set paxis 7 range [ * : * ] noreverse nowriteback
 set zero 1e-08
 set lmargin  -1
 set bmargin  -1
-set rmargin  7
+set rmargin  6.5
 set tmargin  -1
 set locale "en_US.UTF-8"
 set pm3d explicit at s
@@ -150,7 +149,50 @@ set fontpath
 set psdir
 set fit brief errorvariables nocovariancevariables errorscaling prescale nowrap v5
 
+set xtics norangelimit 500
+set y2tics norangelimit 5
+set xrange [ -0.50000 : 2700 ] noreverse nowriteback
+
+#set arrow from first 0, second 23 to first 2680, second 23 lt 3 lc '#aaaaaa' lw 1 nohead
+#set label "🡣 preprocess, compile and assemble" at first 0, second 16.03 font "Arimo Bold, 22" front offset 0,-0.7 left textcolor '#999999'
+#set label "archive, link and strip 🡡" at first 5100, second 16.03 font "Arimo Bold, 22" front offset 0,0.6 right textcolor '#999999'
+set label "job completed 🡢" at first 2689, second 30 font "Arimo Bold, 22" front offset 0,0 right textcolor '#999999'
+
+set multiplot layout 1,2
+set size 0.75, 1.0
 x = 0.0
+## Last datafile plotted: "timing_data"
+plot "timing_data" using ($2/1000) t "" lc rgb "#ffffffff", \
+                "" using ($3/1000) t "" lc rgb "#377eb8", \
+                "" using ($4/1000) t "" lc rgb "#377eb8", \
+                "" using ($5/1000) t "Fetching the dependencies" lc rgb "#377eb8", \
+                "" using ($6/1000) t "Executing the thunk" lc rgb "#4daf4a", \
+                "" using ($7/1000) t "Uploading the results" lc rgb "#e41a1c"
+
+set y2label "Time (s)"
+set y2label font "Arial, 28" textcolor lt -1 rotate by -270 offset 0, 0
+set xtics (2660,2670,2680,2689)
+
+unset label
+unset arrow
+unset key
+
+set label "job completed 🡢" at first 2687.5, second 28.1 font "Arimo Bold, 22" front offset 0,0 right textcolor '#999999'
+set arrow from first 2659, second 21.8 to first 2685, second 21.8 lt 3 lc '#aaaaaa' lw 1 nohead
+set label "archive and link 🡡" at first 2685.0, second 21.8 font "Arimo Bold, 22" front offset 0,0.6 right textcolor '#999999'
+
+set size 0.25, 1.0
+set origin 0.74, 0
+set lmargin -5
+x = 0.0
+
+set xrange [2659 : 2689 ] noreverse nowriteback
+set yrange [14.8 : 28.2]  noreverse nowriteback
+set y2range [14.8 : 28.2]  noreverse nowriteback
+set y2tics (15, 20, 25, 28)
+set y2tics add (28)
+
+set boxwidth 0.85 relative
 ## Last datafile plotted: "timing_data"
 plot "timing_data" using ($2/1000) t "" lc rgb "#ffffffff", \
                 "" using ($3/1000) t "" lc rgb "#377eb8", \
