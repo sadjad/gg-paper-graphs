@@ -1,0 +1,28 @@
+digraph "STEP1"
+{
+  overlap = false;
+  splines = true;
+  ranksep = 0.5;
+  graph [pad="0.2"; nodesep="0.5"];
+  edge [arrowhead=vee,arrowsize=0.8];
+
+
+  node [shape=box,fontname="SF Mono",fontsize=18];
+
+  {node [shape=box,label="+",fillcolor=gold,penwidth=1.5,style="filled,rounded",shape=box,margin="0.1,0.1"] "fib_4"}
+  {node [shape=box,label="fib(3)",group=B] "fib_3"}
+  {node [shape=box,label="fib(2)",group=A] "fib_2"}
+  {node [shape=box,label="fib(1)",group=B,style=invis] "fib_1"}
+  {node [shape=box,label="fib(0)",group=A,style=invis] "fib_0"}
+
+  {rank = sink; "fib_4"}
+  {rank = source; "fib_0"; "fib_1"}
+  {rank = same; "fib_2"; "fib_3"}
+
+  "fib_3" -> "fib_4";
+  "fib_2" -> "fib_4";
+  "fib_2" -> "fib_3" [style="invis"];
+  "fib_1" -> "fib_3" [style="invis"];
+  "fib_1" -> "fib_2" [style="invis"];
+  "fib_0" -> "fib_2" [style="invis"];
+}
